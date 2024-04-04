@@ -1,0 +1,48 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>量子光学 - 标签 - Haifei&#39;s Home</title>
+        <link>http://example.com/zh-cn/tags/%E9%87%8F%E5%AD%90%E5%85%89%E5%AD%A6/</link>
+        <description>量子光学 - 标签 - Haifei&#39;s Home</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>hfwang132@gmail.com (hfwang132)</managingEditor>
+            <webMaster>hfwang132@gmail.com (hfwang132)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 09 Mar 2024 17:37:15 &#43;0800</lastBuildDate><atom:link href="http://example.com/zh-cn/tags/%E9%87%8F%E5%AD%90%E5%85%89%E5%AD%A6/" rel="self" type="application/rss+xml" /><item>
+    <title>光子有波函数吗？</title>
+    <link>http://example.com/zh-cn/photon_wave_func/</link>
+    <pubDate>Sat, 09 Mar 2024 17:37:15 &#43;0800</pubDate>
+    <author>hfwang132</author>
+    <guid>http://example.com/zh-cn/photon_wave_func/</guid>
+    <description><![CDATA[光子有时空表象下的波函数： $\Psi(\mathbf{r},t)=\langle \mathbf{r},t|\psi\rangle=\langle 0 |E^{+}(\mathbf{r},t)|\psi\rangle$ 其中 $\begin{aligned} |\mathbf{r},t\rangle = E^{-}(\mathbf{r},t) |0\rangle = \sum_{\mathbf{k},\lambda} \sqrt{\frac{\hbar \omega}{2 \epsilon_0 V}} e^{\mathrm{i}(\mathbf{k}\cdot \mathbf{r}-\omega_{\mathbf{k}} t)} a^\dag_{\mathbf{k},\lambda} |0\rangle \end{aligned}$ 。 直观来看，就是让场算符 $E^{-}(\mathbf{r},t)$ 在时空点 $(\mathbf{r},t)$ 处创造一个态 $|\mathbf{r},t\rangle$ ，再求这个态和 $|\psi\rangle$ 之]]></description>
+</item>
+<item>
+    <title>BCH 公式 - 量子力学爆算的大杀器</title>
+    <link>http://example.com/zh-cn/bch/</link>
+    <pubDate>Thu, 07 Mar 2024 20:59:38 &#43;0800</pubDate>
+    <author>hfwang132</author>
+    <guid>http://example.com/zh-cn/bch/</guid>
+    <description><![CDATA[Baker-Campbell-Hausdorff 公式 可以用来计算海森堡表象下的算符演化： $e^X Y e^{-X}=Y+[X,Y]+\frac{1}{2!}[X,[X,Y]]+\frac{1}{3!}[X,[X,[X,Y]]]+\cdots$ 这个公式其实只是 BCH 公式的小弟 因为海森堡表象下的算符演化规则是 $A\rightarrow UAU^{\dag}$ ，其中 $U$ 是酉演化算符。 如果 $U$]]></description>
+</item>
+<item>
+    <title>复数对于描述电磁波有什么重要性？</title>
+    <link>http://example.com/zh-cn/complex_numbers_in_em/</link>
+    <pubDate>Fri, 16 Feb 2024 00:32:34 &#43;0800</pubDate>
+    <author>hfwang132</author>
+    <guid>http://example.com/zh-cn/complex_numbers_in_em/</guid>
+    <description><![CDATA[在经典力学中，复数只是一个用来简化计算的数学技巧。 在量子力学中，复数不再只是一个数学技巧，而是有一定的物理意义。考虑经典矢势： $\begin{aligned} \mathbf{A}(\mathbf{r},t)=\sum_{\mathbf{k}\lambda} \left( A_{\mathbf{k}\lambda}e^{i(\mathbf{k}\cdot\mathbf{r}-\omega_{\mathbf{k}}t)} + \text{c.c.}\right)\mathbf{e}_{\mathbf{k}\lambda} \end{aligned}$]]></description>
+</item>
+<item>
+    <title>HBT实验测量SPDC多模压缩态的频谱关联与纯度</title>
+    <link>http://example.com/zh-cn/hbt_spectral_correlation/</link>
+    <pubDate>Mon, 05 Feb 2024 00:12:16 &#43;0800</pubDate>
+    <author>hfwang132</author>
+    <guid>http://example.com/zh-cn/hbt_spectral_correlation/</guid>
+    <description><![CDATA[上篇我们说了在 HBT 实验中，用非光子数分辨的单光子探测器测量量子二阶关联函数的原理。 https://zhuanlan.zhihu.com/p/679453473 这篇我们来看看量子二阶关联函数有什么用。除了老生常谈的用来]]></description>
+</item>
+<item>
+    <title>非光子数分辨探测器测二阶关联函数（g2）的原理</title>
+    <link>http://example.com/zh-cn/hbt_g2/</link>
+    <pubDate>Mon, 05 Feb 2024 00:11:33 &#43;0800</pubDate>
+    <author>hfwang132</author>
+    <guid>http://example.com/zh-cn/hbt_g2/</guid>
+    <description><![CDATA[HBT 实验 做量光实验的小伙伴一定知道 HBT 实验可以用来测二阶关联函数 g2，即将一束光用 50:50 的分束器分成两束，再分别用两个探测器探测，并统计两边光强的关]]></description>
+</item>
+</channel>
+</rss>
