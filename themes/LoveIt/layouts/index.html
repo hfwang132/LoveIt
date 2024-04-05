@@ -1,0 +1,96 @@
+{{- define "content" -}}
+    {{- $params := .Scratch.Get "params" -}}
+    {{- $profile := .Site.Params.home.profile -}}
+    {{- $posts := .Site.Params.home.posts -}}
+
+    <div class="page home"{{ if ne $posts.enable false }} data-home="posts"{{ end }}>
+        {{- /* Profile */ -}}
+        {{- if ne $profile.enable false -}}
+            {{- partial "home/profile.html" . -}}
+        {{- end -}}
+
+        {{- /* Content */ -}}
+        {{- if .Content -}}
+            <div class="single">
+                <div class="content" id="content">
+                    {{- dict "Content" .Content "Ruby" $params.ruby "Fraction" $params.fraction "Fontawesome" $params.fontawesome | partial "function/content.html" | safeHTML -}}
+                </div>
+            </div>
+        {{- end -}}
+
+        <!-- <p>
+        Subscribe via [<a href="https://hfwang132.github.io/index.xml">RSS</a>] | 通过 RSS 来订阅
+        </p> -->
+
+        <!-- <p>
+        <a href="https://hfwang132.github.io/zh-cn/">简体中文</a> | <a href="https://hfwang132.github.io/">English</a>
+        </p> -->
+
+            {{- if .Site.IsMultiLingual -}}
+            <style>
+                .language-dropdown-container {
+                    position: relative;
+                    display: inline-block;
+                }
+
+                /* .language-select {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                } */
+                .language-dropdown-container-center {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            </style>
+            
+            <div class="language-dropdown-container-center">
+                点击 &nbsp; 
+                <div class="language-dropdown-container">
+                    <a href="javascript:void(0);" class="menu-item language" title="{{ T "selectLanguage" }}">
+                        <i class="fa fa-globe" aria-hidden="true"></i>                      
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;">
+                            {{- if eq .Kind "404" -}}
+                                {{- /* https://github.com/dillonzq/LoveIt/issues/378 */ -}}
+                                {{- range .Sites -}}
+                                    {{- $link := printf "%v/404.html" .LanguagePrefix -}}
+                                    <option value="{{ $link }}"{{ if eq . $.Site }} selected{{ end }}>
+                                        {{- .Language.LanguageName -}}
+                                    </option>
+                                {{- end -}}
+                            {{- else -}}
+                                {{- range .AllTranslations -}}
+                                    <option value="{{ .RelPermalink }}"{{ if eq .Lang $.Lang }} selected{{ end }}>
+                                        {{- .Language.LanguageName -}}
+                                    </option>
+                                {{- end -}}
+                            {{- end -}}
+                        </select>
+                    </a>
+                </div>
+                &nbsp; 切换语言~
+            </div>
+            {{- end -}}
+
+        {{- /* Posts */ -}}
+        {{- if ne $posts.enable false | and .Site.RegularPages -}}
+            {{- /* Paginate */ -}}
+            {{- $pages := where .Site.RegularPages "Type" "posts" -}}
+            {{- if .Site.Params.page.hiddenFromHomePage -}}
+                {{- $pages = where $pages "Params.hiddenfromhomepage" false -}}
+            {{- else -}}
+                {{- $pages = where $pages "Params.hiddenfromhomepage" "!=" true -}}
+            {{- end -}}
+            {{- with $posts.paginate | default .Site.Params.paginate -}}
+                {{- $pages = $.Paginate $pages . -}}
+            {{- else -}}
+                {{- $pages = .Paginate $pages -}}
+            {{- end -}}
+            {{- range $pages.Pages -}}
+                {{- .Render "summary" -}}
+            {{- end -}}
+            {{- partial "paginator.html" . -}}
+        {{- end -}}
+    </div>
+{{- end -}}
